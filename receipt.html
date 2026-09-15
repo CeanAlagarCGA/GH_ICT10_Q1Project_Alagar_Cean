@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>skills test </title>
+</head>
+
+<style>
+
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-image: linear-gradient(rgba(24, 15, 9, 0.58), rgba(24, 15, 9, 0.72)), url('https://img.magnific.com/free-photo/coffee-beans-dark-background-top-view-coffee-concept_1220-6299.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #292722;
+        min-height: 100vh;
+
+        padding: 0 20px 40px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 -20px 40px;
+        padding: 18px 20px;
+        background: rgba(28, 17, 11, 0.94);
+        border-bottom: 1px solid rgba(244, 213, 167, 0.25);
+    }
+
+    nav a {
+        color: #f8e7cb;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 18px;
+        border-radius: 999px;
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: #c98b52;
+        color: #21120b;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        background: rgba(255, 248, 237, 0.96);
+
+        padding: 38px;
+        border-radius: 24px;
+
+        border: 1px solid rgba(244, 213, 167, 0.7);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    header {
+        margin-bottom: 32px;
+    }
+
+    header h1 {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: #25231f;
+        margin-bottom: 6px;
+    }
+
+    header h2 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #8b867d;
+    }
+
+    h3 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #45413a;
+    }
+
+    select {
+        width: 100%;
+        height: 52px;
+
+        padding: 0 16px;
+
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+
+        color: #292722;
+        background: #faf9f7;
+
+        border: 1px solid #dedbd4;
+        border-radius: 12px;
+
+        outline: none;
+        cursor: pointer;
+
+        transition: 0.2s ease;
+    }
+
+    select:hover {
+        border-color: #aaa59b;
+    }
+
+    select:focus {
+        border-color: #6f685d;
+        box-shadow: 0 0 0 3px rgba(111, 104, 93, 0.12);
+    }
+
+    input[type="button"] {
+        width: 100%;
+        height: 52px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #6d3f27;
+        color: #ffffff;
+
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.15s ease,
+            background 0.15s ease,
+            box-shadow 0.15s ease;
+    }
+
+    input[type="button"]:hover {
+        background: #9a6136;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    input[type="button"]:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .receipt {
+        margin-top: 32px;
+
+        padding: 24px;
+
+        background: #f8f6f2;
+        border: 1px solid #ebe7df;
+        border-radius: 18px;
+    }
+
+    .receipt h2 {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+
+        border-bottom: 1px solid #ddd8cf;
+    }
+
+    #show {
+        font-size: 14px;
+        font-weight: 600;
+        color: #514c44;
+
+        margin-bottom: 18px;
+    }
+
+    .receipt p:not(#show) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 14px;
+        color: #716c63;
+
+        margin-top: 12px;
+    }
+
+    .receipt span {
+        font-weight: 600;
+        color: #302d28;
+    }
+
+    .receipt strong {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 16px;
+        color: #292722;
+    }
+
+
+        .container {
+            margin-top: 20px;
+            padding: 26px 22px;
+            border-radius: 20px;
+        }
+
+        header h1 {
+            font-size: 27px;
+        }
+
+        .receipt {
+            padding: 20px;
+        }
+    
+</style>
+<body>
+
+<nav>
+    <a href="index.html">SKU Generator</a>
+    <a class="active" href="receipt.html">Receipt Generator</a>
+</nav>
+
+<div class="container">
+
+    <header>
+        <h1>Campus Canteen</h1>
+        <h2>Receipt Generator</h2>
+    </header>
+
+    <h3>Select Your Item</h3>
+
+    <select id="coffee">
+
+        <option id="item1" value="99">Americano - ₱99</option>
+        <option id="item2"value="120">Latte - ₱120</option>
+        <option id="item3"value="130">Cappuccino - ₱130</option>
+        <option id="item4"value="110">Mocha - ₱110</option>
+
+    </select>
+
+    <br><br>
+
+    <input type="button" py-click="create_order" value="Submit">
+
+    <section class="receipt">
+
+        <h2>Receipt</h2>
+
+        <p id="show"></p>
+
+        <p>Subtotal: ₱<span id="subtotal">0.00</span></p>
+
+        <p>VAT (12%): ₱<span id="vat">0.00</span></p>
+
+        <p>
+            <strong>
+                Total Amount: ₱<span id="total" >0.00</span>
+            </strong>
+        </p>
+
+    </section>
+
+</div>
+
+<py-script src="main2.py"></py-script>
+
+</body>
+</html>
+
